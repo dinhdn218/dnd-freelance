@@ -1,0 +1,6 @@
+node_modules/
+tools/capture/_sheets/
+.claude/
+.vercel/
+.DS_Store
+Thumbs.db

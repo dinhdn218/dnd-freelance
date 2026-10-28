@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đinh Ngọc Định · Thiết kế &amp; lập trình website theo yêu cầu</title>
+  <meta name="description" content="Website may đo cho quán, tiệm và thương hiệu Việt. Thiết kế riêng, code tay, đẹp trên điện thoại, chuẩn SEO. Tư vấn và báo giá miễn phí qua Zalo 0394 466 363.">
+  <meta name="theme-color" content="#F3EEE5">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:title" content="Đinh Ngọc Định · Website may đo cho thương hiệu Việt">
+  <meta property="og:description" content="Thiết kế riêng, code tay, đẹp trên điện thoại. Xem các dự án và nhắn Zalo để được tư vấn miễn phí.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231B1713'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='38' fill='%23F3EEE5'%3Ed%3C/text%3E%3Ccircle cx='47' cy='44' r='4.5' fill='%23EC7A45'/%3E%3C/svg%3E">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var t;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      d.dataset.theme = t;
+      document.querySelector('meta[name="theme-color"]').content = t === 'dark' ? '#110F0D' : '#F3EEE5';
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('js');
+      // Nếu thư viện animation không tải được, hiện nội dung bình thường thay vì để trang trống.
+      setTimeout(function () { if (!d.classList.contains('is-ready')) d.classList.remove('js'); }, 4000);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#du-an">Bỏ qua, tới phần dự án</a>
+
+  <div class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-logo">dnd<i>.</i></span>
+      <span class="loader-count">0</span>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" aria-label="Đinh Ngọc Định, về đầu trang">dnd<i>.</i></a>
+
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#du-an">Dự án</a>
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#quy-trinh">Quy trình</a>
+        <a href="#bao-gia">Báo giá</a>
+        <a href="#hoi-dap">Hỏi đáp</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Đổi giao diện sáng / tối">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm nav-cta" href="https://zalo.me/0394466363" target="_blank" rel="noopener">Nhắn Zalo</a>
+        <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Mở menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" inert>
+    <nav class="container menu-inner" aria-label="Menu điện thoại">
+      <a href="#du-an"><span>01</span>Dự án</a>
+      <a href="#dich-vu"><span>02</span>Dịch vụ</a>
+      <a href="#quy-trinh"><span>03</span>Quy trình</a>
+      <a href="#bao-gia"><span>04</span>Báo giá</a>
+      <a href="#hoi-dap"><span>05</span>Hỏi đáp</a>
+      <a href="#lien-he"><span>06</span>Liên hệ</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="status" data-intro><span class="status-dot"></span>Đang nhận dự án mới</p>
+          <h1 class="display" data-split="intro">Website <em>may đo</em><br> cho thương hiệu<br> của riêng bạn.</h1>
+          <p class="hero-lead" data-intro>Mình là Định, lập trình viên web 5 năm ở Hà Nội. Mình tự thiết kế và code website cho quán ăn, tiệm nail, tiệm hoa, nội thất, homestay… Không dùng template có sẵn, để trang web mang đúng chất riêng của bạn và mở mượt trên điện thoại.</p>
+          <div class="hero-cta" data-intro>
+            <a class="btn btn-primary" href="https://zalo.me/0394466363" target="_blank" rel="noopener" data-magnetic>
+              Nhắn Zalo tư vấn
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#du-an">
+              Xem dự án
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="fan">
+            <figure class="fan-phone" style="--x:-86%;--y:12%;--r:-14deg;--z:1"><div class="fan-inner"><img src="assets/shots/an-retreat-mobile.webp" alt="" width="780" height="1688"></div></figure>
+            <figure class="fan-phone" style="--x:-48%;--y:4%;--r:-7deg;--z:2"><div class="fan-inner"><img src="assets/shots/muoi-nail-mobile.webp" alt="" width="780" height="1688"></div></figure>
+            <figure class="fan-phone" style="--x:86%;--y:12%;--r:14deg;--z:1"><div class="fan-inner"><img src="assets/shots/luna-mobile.webp" alt="" width="780" height="1688"></div></figure>
+            <figure class="fan-phone" style="--x:48%;--y:4%;--r:7deg;--z:2"><div class="fan-inner"><img src="assets/shots/biahoidatmo-mobile.webp" alt="" width="780" height="1688"></div></figure>
+            <figure class="fan-phone" style="--x:0%;--y:-2%;--r:0deg;--z:3"><div class="fan-inner"><img src="assets/shots/amor-mobile.webp" alt="" width="780" height="1688" fetchpriority="high"></div></figure>
+          </div>
+        </div>
+      </div>
+
+      <ul class="container hero-facts" data-intro>
+        <li><strong>5+ năm</strong><span>làm web chuyên nghiệp</span></li>
+        <li><strong>Thiết kế riêng</strong><span>không dùng template</span></li>
+        <li><strong>Online toàn quốc</strong><span>trao đổi qua Zalo, Meet</span></li>
+      </ul>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Nhà hàng</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Quán nhậu</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Nail &amp; Spa</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Tiệm hoa</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Nội thất</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Homestay</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Cửa hàng online</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Ứng dụng web</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+        </div>
+        <div class="marquee-group">
+          <span>Nhà hàng</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Quán nhậu</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Nail &amp; Spa</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Tiệm hoa</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Nội thất</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Homestay</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <span>Cửa hàng online</span><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+          <em>Ứng dụng web</em><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5 5 19"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ DỰ ÁN ============ -->
+    <section class="section work" id="du-an">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span>01</span>Dự án tiêu biểu</p>
+          <h2 class="h2" data-split>Bảy trang web,<br> bảy <em>cá tính</em> khác nhau.</h2>
+          <p class="section-lead" data-reveal>Từ quán nhậu, tiệm nail đến nội thất và nghỉ dưỡng, mỗi trang được làm riêng cho ngành hàng và khách hàng của thương hiệu đó.
+            <span class="hint hint-hover">Rê chuột lên ảnh để cuộn xem cả trang.</span><span class="hint hint-touch">Chạm vào ảnh để cuộn xem cả trang.</span></p>
+        </div>
+
+        <div class="projects">
+          <!-- 01 -->
+          <article class="project" style="--hue:250;--i:0">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">01<small>/07</small></span><span class="chip">Nội thất · Showroom 3D</span></div>
+                <h3 class="project-title">Turnwood</h3>
+                <p class="project-desc">Phòng trưng bày nội thất 3D ngay trên web. Khách xoay mô hình, đổi gỗ và vải, giá tự cập nhật theo cấu hình đã chọn.</p>
+                <ul class="project-points">
+                  <li>Mỗi sản phẩm là một “phòng” 3D, cuộn để đi qua từng phòng</li>
+                  <li>Tuỳ chỉnh chất liệu, xem kích thước thật</li>
+                  <li>Danh mục có bộ lọc, giỏ hàng theo mã cấu hình</li>
+                </ul>
+                <a class="link-arrow" href="https://turnwood.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang Turnwood. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>turnwood.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/turnwood-long.webp" alt="Ảnh chụp toàn trang website Turnwood" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/turnwood-mobile.webp" alt="Turnwood trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article class="project" style="--hue:150;--i:1">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">02<small>/07</small></span><span class="chip">Nghỉ dưỡng · Homestay</span></div>
+                <h3 class="project-title">AN Retreat</h3>
+                <p class="project-desc">Website cho một khu nghỉ giữa rừng: nhịp chậm, ảnh lớn, chữ vừa đủ, và ô tìm phòng theo ngày ngay màn hình đầu tiên.</p>
+                <ul class="project-points">
+                  <li>Tìm phòng theo ngày nhận, ngày trả và số khách</li>
+                  <li>Giới thiệu từng căn kèm diện tích, sức chứa, giá mỗi đêm</li>
+                  <li>Kể câu chuyện thương hiệu và các trải nghiệm</li>
+                </ul>
+                <a class="link-arrow" href="https://an-retreat.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang AN Retreat. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>an-retreat.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/an-retreat-long.webp" alt="Ảnh chụp toàn trang website AN Retreat" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/an-retreat-mobile.webp" alt="AN Retreat trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article class="project" style="--hue:90;--i:2">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">03<small>/07</small></span><span class="chip">Nhà hàng · Quán nhậu</span></div>
+                <h3 class="project-title">Bia Hơi Đất Mỏ</h3>
+                <p class="project-desc">Trang cho chuỗi quán nhậu 3 cơ sở ở Hà Nội. Thực đơn 117 món chia 11 nhóm, tìm món nhanh và ghi món vào phiếu gọi ngay trên điện thoại.</p>
+                <ul class="project-points">
+                  <li>Menu số có tìm kiếm, lọc theo nhóm món</li>
+                  <li>Phiếu gọi món và đặt bàn cho hội đông</li>
+                  <li>Món mới, ưu đãi và tổng đài luôn nổi bật</li>
+                </ul>
+                <a class="link-arrow" href="https://biahoidatmo.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang Bia Hơi Đất Mỏ. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>biahoidatmo.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/biahoidatmo-long.webp" alt="Ảnh chụp toàn trang website Bia Hơi Đất Mỏ" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/biahoidatmo-mobile.webp" alt="Bia Hơi Đất Mỏ trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article class="project" style="--hue:15;--i:3">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">04<small>/07</small></span><span class="chip">Làm đẹp · Nail</span></div>
+                <h3 class="project-title">Mười Nail Studio</h3>
+                <p class="project-desc">Khách bấm vào chai sơn để sơn thử lên bàn tay, đổi dáng móng và tông da, rồi đặt lịch luôn khi đã ưng màu.</p>
+                <ul class="project-points">
+                  <li>Thử 12 màu sơn trên bàn tay ảo</li>
+                  <li>Gợi ý bộ móng theo lịch trình: đi làm, hẹn hò, đi biển</li>
+                  <li>Bảng giá niêm yết rõ ràng, đặt lịch nhanh</li>
+                </ul>
+                <a class="link-arrow" href="https://muoi-nail.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang Mười Nail Studio. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>muoi-nail.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/muoi-nail-long.webp" alt="Ảnh chụp toàn trang website Mười Nail Studio" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/muoi-nail-mobile.webp" alt="Mười Nail Studio trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article class="project" style="--hue:285;--i:4">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">05<small>/07</small></span><span class="chip">Ứng dụng web · Quản lý công việc</span></div>
+                <h3 class="project-title">Flow</h3>
+                <p class="project-desc">Trang giới thiệu cho một ứng dụng quản lý công việc, kèm bản demo dùng được ngay: kéo thả Kanban, lọc theo dự án, sáng tối tuỳ ý.</p>
+                <ul class="project-points">
+                  <li>Demo tương tác ngay trên trang, không cần đăng ký</li>
+                  <li>Bảng Kanban kéo thả và dạng danh sách</li>
+                  <li>Chế độ sáng / tối, dữ liệu lưu ngay trên máy</li>
+                </ul>
+                <a class="link-arrow" href="https://flow-dun-five.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang Flow. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>flow-dun-five.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/flow-long.webp" alt="Ảnh chụp toàn trang website Flow" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/flow-mobile.webp" alt="Flow trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article class="project" style="--hue:75;--i:5">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">06<small>/07</small></span><span class="chip">Thương hiệu · Đèn trang trí</span></div>
+                <h3 class="project-title">LUNA</h3>
+                <p class="project-desc">Trang thương hiệu đèn trang trí: kéo thanh trượt để thấy căn phòng sáng dần, chạm vào ảnh không gian để xem mẫu đèn được gợi ý.</p>
+                <ul class="project-points">
+                  <li>Mô phỏng bật đèn và chỉnh độ sáng</li>
+                  <li>Ảnh không gian có điểm chạm sản phẩm</li>
+                  <li>Gợi ý đèn theo vị trí: bàn ăn, góc đọc, sofa</li>
+                </ul>
+                <a class="link-arrow" href="https://luna-lights.vercel.app/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang LUNA. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>luna-lights.vercel.app</span></div>
+                  <div class="browser-view"><img src="assets/shots/luna-long.webp" alt="Ảnh chụp toàn trang website LUNA" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/luna-mobile.webp" alt="LUNA trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- 07 -->
+          <article class="project" style="--hue:0;--i:6">
+            <div class="project-card">
+              <div class="project-info">
+                <div class="project-meta"><span class="project-num">07<small>/07</small></span><span class="chip">Bán lẻ · Tiệm hoa online</span></div>
+                <h3 class="project-title">Amor Florist</h3>
+                <p class="project-desc">Cửa hàng hoa online cho một tiệm hoa ở Hà Nội: chọn hoa theo dịp, xem chi tiết, thêm vào giỏ và đặt hàng ngay trên web.</p>
+                <ul class="project-points">
+                  <li>Danh mục theo dịp: tình yêu, sinh nhật, chúc mừng…</li>
+                  <li>Giỏ hàng và luồng đặt hoa gọn trên điện thoại</li>
+                  <li>Trang chính sách và hướng dẫn đặt hoa</li>
+                </ul>
+                <a class="link-arrow" href="https://amor-florist.shop/" target="_blank" rel="noopener" data-cursor="Mở trang">Xem trang thật<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              </div>
+              <div class="project-media">
+                <div class="browser" tabindex="0" data-cursor="Cuộn xem" aria-label="Ảnh chụp toàn trang Amor Florist. Rê chuột, chạm hoặc nhấn Tab để cuộn xem.">
+                  <div class="browser-bar"><i></i><i></i><i></i><span>amor-florist.shop</span></div>
+                  <div class="browser-view"><img src="assets/shots/amor-long.webp" alt="Ảnh chụp toàn trang website Amor Florist" loading="lazy" decoding="async"></div>
+                </div>
+                <figure class="phone"><img src="assets/shots/amor-mobile.webp" alt="Amor Florist trên điện thoại" width="780" height="1688" loading="lazy" decoding="async"></figure>
+              </div>
+              <div class="project-shade" aria-hidden="true"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DỊCH VỤ ============ -->
+    <section class="section services" id="dich-vu">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span>02</span>Dịch vụ</p>
+          <h2 class="h2" data-split>Mình có thể làm gì<br> <em>cho bạn?</em></h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service" data-reveal>
+            <span class="service-num">01</span>
+            <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M8 13h8M8 17h5"/></svg>
+            <h3>Landing page giới thiệu</h3>
+            <p>Một trang kể trọn câu chuyện thương hiệu: món ngon, dịch vụ, bảng giá, địa chỉ, và nút gọi, nhắn Zalo luôn trong tầm tay.</p>
+            <p class="service-fit"><span>Hợp với</span>quán ăn, spa, homestay, sự kiện</p>
+          </article>
+          <article class="service" data-reveal>
+            <span class="service-num">02</span>
+            <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+            <h3>Website bán hàng</h3>
+            <p>Danh mục, trang sản phẩm, giỏ hàng và đặt hàng. Đơn mới về thẳng với bạn, khách không phải nhắn tin hỏi giá từng món.</p>
+            <p class="service-fit"><span>Hợp với</span>tiệm hoa, thời trang, đồ handmade</p>
+          </article>
+          <article class="service" data-reveal>
+            <span class="service-num">03</span>
+            <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4M8 15h3"/></svg>
+            <h3>Đặt bàn, đặt lịch</h3>
+            <p>Khách chọn dịch vụ, ngày giờ và số người ngay trên web. Bạn nhận đủ thông tin, đỡ phải gọi qua gọi lại.</p>
+            <p class="service-fit"><span>Hợp với</span>nhà hàng, nail, spa, phòng khám</p>
+          </article>
+          <article class="service" data-reveal>
+            <span class="service-num">04</span>
+            <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+            <h3>Website doanh nghiệp + trang quản trị</h3>
+            <p>Nhiều trang, có tin tức, tuyển dụng, song ngữ, và trang quản trị để bạn tự đăng bài, sửa giá, thêm sản phẩm.</p>
+            <p class="service-fit"><span>Hợp với</span>công ty, chuỗi cửa hàng, thương hiệu</p>
+          </article>
+        </div>
+
+        <div class="extras" data-reveal>
+          <p class="extras-label">Đi kèm khi cần</p>
+          <ul class="extras-list">
+            <li>Tên miền &amp; hosting</li>
+            <li>SEO lên Google</li>
+            <li>Google Maps</li>
+            <li>Facebook Pixel, GA4</li>
+            <li>Song ngữ Việt – Anh</li>
+            <li>Làm lại website cũ</li>
+            <li>Hiệu ứng &amp; 3D</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VÌ SAO ============ -->
+    <section class="section why" id="ve-minh">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-copy">
+            <p class="eyebrow" data-reveal><span>03</span>Vì sao chọn mình</p>
+            <h2 class="h2" data-split>Bạn nói chuyện <em>trực tiếp</em> với người làm ra website.</h2>
+            <p class="section-lead" data-reveal>Không qua trung gian, không chuyển yêu cầu qua nhiều tầng. Ngoài nhận làm freelance, mình đang là lập trình viên fullstack tại một công ty công nghệ ở Hà Nội, làm báo điện tử, cổng thông tin KOL quốc gia (kol.gov.vn), nền tảng tổ chức sự kiện và website thương mại điện tử.</p>
+            <a class="link-arrow" href="https://dnd-portfolio.vercel.app/" target="_blank" rel="noopener" data-reveal>Xem hồ sơ kỹ thuật của mình<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+          <dl class="stats">
+            <div class="stat" data-reveal><dt>năm làm web chuyên nghiệp</dt><dd><span data-count="5">5</span>+</dd></div>
+            <div class="stat" data-reveal><dt>sản phẩm đang chạy thực tế ở công ty</dt><dd><span data-count="13">13</span></dd></div>
+            <div class="stat" data-reveal><dt>thiết kế riêng, không dùng template</dt><dd><span data-count="100">100</span>%</dd></div>
+          </dl>
+        </div>
+
+        <ul class="pledges">
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
+            <h3>Ưu tiên điện thoại</h3>
+            <p>Phần lớn khách xem web trên điện thoại, nên mình thiết kế cho màn hình nhỏ trước.</p>
+          </li>
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+            <h3>Tải nhanh</h3>
+            <p>Ảnh được nén, code gọn, trang mở nhanh kể cả khi mạng yếu.</p>
+          </li>
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <h3>Chuẩn SEO cơ bản</h3>
+            <p>Tiêu đề, mô tả, sitemap, ảnh chia sẻ Facebook và Zalo hiển thị đẹp.</p>
+          </li>
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg>
+            <h3>Góp ý trên bản demo</h3>
+            <p>Bạn xem giao diện trên điện thoại thật và góp ý trước khi mình code.</p>
+          </li>
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="m3 7.5 9 4.5 9-4.5M12 12v9"/></svg>
+            <h3>Bàn giao đầy đủ</h3>
+            <p>Mã nguồn, tên miền, tài khoản đứng tên bạn, kèm hướng dẫn sử dụng.</p>
+          </li>
+          <li data-reveal>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"/></svg>
+            <h3>Hỗ trợ sau bàn giao</h3>
+            <p>Có lỗi kỹ thuật thì mình sửa. Cần thêm tính năng, mình báo giá rõ ràng.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ QUY TRÌNH ============ -->
+    <section class="section process" id="quy-trinh">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span>04</span>Quy trình</p>
+          <h2 class="h2" data-split>Bốn bước,<br> <em>rõ ràng</em> từ đầu.</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="steps-line" aria-hidden="true"><span></span></li>
+          <li class="step" data-reveal>
+            <span class="step-dot">01</span>
+            <h3>Trao đổi</h3>
+            <p>Bạn kể về thương hiệu, khách hàng và điều bạn muốn website làm được. Mình gửi báo giá và lịch làm việc cụ thể, miễn phí.</p>
+            <span class="step-out">Bạn nhận: báo giá + lịch</span>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot">02</span>
+            <h3>Thiết kế</h3>
+            <p>Mình dựng bản demo giao diện để bạn xem trên điện thoại và máy tính, góp ý cho tới khi ưng.</p>
+            <span class="step-out">Bạn nhận: bản demo</span>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot">03</span>
+            <h3>Lập trình</h3>
+            <p>Code từng trang, tối ưu tốc độ, gắn tên miền, SEO, Google Maps, nút gọi và Zalo.</p>
+            <span class="step-out">Bạn nhận: website chạy thật</span>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-dot">04</span>
+            <h3>Bàn giao</h3>
+            <p>Bàn giao mã nguồn và tài khoản, hướng dẫn cách dùng, theo dõi và hỗ trợ sau khi ra mắt.</p>
+            <span class="step-out">Bạn nhận: hướng dẫn + hỗ trợ</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BÁO GIÁ ============ -->
+    <section class="section pricing" id="bao-gia">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span>05</span>Gói dịch vụ</p>
+          <h2 class="h2" data-split>Chọn gói <em>vừa vặn</em><br> với bạn.</h2>
+          <p class="section-lead" data-reveal>Mỗi dự án một khác, nên mình báo giá sau khi nghe bạn mô tả. Tư vấn và báo giá đều miễn phí.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan" data-reveal>
+            <h3>Landing Page</h3>
+            <p class="plan-for">Cho quán, spa, sự kiện cần có mặt trên mạng thật nhanh.</p>
+            <p class="plan-price">Liên hệ báo giá</p>
+            <ul>
+              <li>Một trang, thiết kế riêng</li>
+              <li>Đẹp trên điện thoại và máy tính</li>
+              <li>Nút gọi, Zalo, Google Maps</li>
+              <li>Form liên hệ hoặc đặt lịch</li>
+              <li>SEO cơ bản, ảnh chia sẻ đẹp</li>
+              <li>Hỗ trợ tên miền và hosting</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://zalo.me/0394466363" target="_blank" rel="noopener">Hỏi giá gói này</a>
+          </article>
+
+          <article class="plan plan-featured" data-reveal>
+            <span class="plan-badge">Đề xuất</span>
+            <h3>Website Doanh nghiệp</h3>
+            <p class="plan-for">Cho công ty, chuỗi cửa hàng cần nhiều trang và tự cập nhật nội dung.</p>
+            <p class="plan-price">Liên hệ báo giá</p>
+            <ul>
+              <li>Tất cả những gì có trong Landing Page</li>
+              <li>Nhiều trang: giới thiệu, dịch vụ, tin tức…</li>
+              <li>Trang quản trị để tự đăng bài</li>
+              <li>Song ngữ Việt – Anh (tuỳ chọn)</li>
+              <li>Google Analytics, Search Console</li>
+              <li>Tối ưu tốc độ nâng cao</li>
+            </ul>
+            <a class="btn btn-primary" href="https://zalo.me/0394466363" target="_blank" rel="noopener" data-magnetic>Hỏi giá gói này</a>
+          </article>
+
+          <article class="plan" data-reveal>
+            <h3>Website Bán hàng</h3>
+            <p class="plan-for">Cho tiệm hoa, thời trang, đồ handmade muốn bán online.</p>
+            <p class="plan-price">Liên hệ báo giá</p>
+            <ul>
+              <li>Danh mục và trang sản phẩm</li>
+              <li>Giỏ hàng, đặt hàng</li>
+              <li>Quản lý đơn và sản phẩm</li>
+              <li>Mã giảm giá, sản phẩm nổi bật</li>
+              <li>Thông báo khi có đơn mới</li>
+              <li>SEO cho từng sản phẩm</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://zalo.me/0394466363" target="_blank" rel="noopener">Hỏi giá gói này</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HỎI ĐÁP ============ -->
+    <section class="section faq" id="hoi-dap">
+      <div class="container faq-grid">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal><span>06</span>Hỏi đáp</p>
+          <h2 class="h2" data-split>Câu hỏi<br> <em>thường gặp.</em></h2>
+          <p class="section-lead" data-reveal>Không thấy câu bạn cần? Cứ nhắn Zalo, mình trả lời ngay.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item" data-reveal>
+            <summary>Mình chưa có tên miền và hosting thì sao?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Không sao cả. Mình hướng dẫn bạn mua tên miền đứng tên chính bạn, và chọn hosting hợp với quy mô. Với trang giới thiệu, nhiều trường hợp có thể dùng hosting miễn phí.</p></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Sau này mình có tự sửa nội dung được không?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Được. Nếu bạn cần đổi giá, thêm món, đăng tin thường xuyên, mình làm kèm trang quản trị dễ dùng. Nếu nội dung ít thay đổi, bạn nhắn mình sửa giúp.</p></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Làm một website mất bao lâu?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Tuỳ quy mô. Landing page thường nhanh nhất, website nhiều trang hoặc bán hàng sẽ lâu hơn. Mình ghi lịch cụ thể ngay trong báo giá, trước khi bắt đầu.</p></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Website có lên Google không?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Trang nào cũng được làm SEO cơ bản: tiêu đề, mô tả, sitemap, tốc độ tải và dữ liệu có cấu trúc. Mình cũng giúp bạn khai báo với Google Search Console và Google Business Profile.</p></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Mình đã có website cũ, làm lại được không?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Được. Mình xem website hiện tại, giữ lại nội dung và đường dẫn quan trọng để không mất thứ hạng Google, rồi làm lại giao diện mới.</p></div>
+          </details>
+          <details class="faq-item" data-reveal>
+            <summary>Mình ở xa Hà Nội thì làm việc thế nào?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-body"><p>Mọi trao đổi đều qua Zalo, Google Meet hoặc email. Bạn xem bản demo qua đường link, ngay trên điện thoại của mình.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIÊN HỆ ============ -->
+    <section class="contact" id="lien-he">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span>07</span>Liên hệ</p>
+        <h2 class="display contact-title" data-split>Kể mình nghe<br> về <em>dự án của bạn.</em></h2>
+
+        <div class="contact-grid">
+          <a class="round-btn" href="https://zalo.me/0394466363" target="_blank" rel="noopener" data-magnetic aria-label="Nhắn Zalo cho mình">
+            <svg class="round-text" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+              <text><textPath href="#ring">NHẮN ZALO · TƯ VẤN MIỄN PHÍ · BÁO GIÁ NHANH · </textPath></text>
+            </svg>
+            <span class="round-core">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+          </a>
+
+          <ul class="contact-list">
+            <li data-reveal>
+              <a href="https://zalo.me/0394466363" target="_blank" rel="noopener">
+                <span class="contact-k">Zalo</span><span class="contact-v">0394 466 363</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <a href="tel:+84394466363">
+                <span class="contact-k">Điện thoại</span><span class="contact-v">0394 466 363</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </li>
+            <li data-reveal>
+              <button type="button" data-copy="dinhdn218@gmail.com">
+                <span class="contact-k">Email</span><span class="contact-v">dinhdn218@gmail.com</span>
+                <span class="copy-state" aria-live="polite">Sao chép</span>
+              </button>
+            </li>
+            <li data-reveal>
+              <a href="https://facebook.com/dinhdn218" target="_blank" rel="noopener">
+                <span class="contact-k">Facebook</span><span class="contact-v">/dinhdn218</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> Đinh Ngọc Định · Thiết kế &amp; code tại Hà Nội</p>
+      <a href="#top" class="to-top">Lên đầu trang
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <a class="float-zalo" href="https://zalo.me/0394466363" target="_blank" rel="noopener" aria-label="Nhắn Zalo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v9a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4h0A2.5 2.5 0 0 1 4 14.5v-9Z"/></svg>
+    <span>Zalo</span>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

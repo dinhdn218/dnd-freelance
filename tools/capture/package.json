@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-capture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "node capture.mjs",
+    "og": "node og.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "^25.16.0",
+    "sharp": "^0.35.5"
+  }
+}
