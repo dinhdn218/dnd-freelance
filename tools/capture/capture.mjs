@@ -32,6 +32,9 @@ const LONG_WIDTH = 1200;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function open(page, site) {
+  // Chrome chạy ngầm lấy theme theo hệ điều hành; trang nào đổi giao diện theo thiết bị sẽ bị chụp nền tối
+  // nếu máy đang để chế độ tối, nên luôn ép chế độ sáng.
+  await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
   for (let attempt = 1; ; attempt++) {
     try {
       await page.goto(site.url, { waitUntil: 'load', timeout: 60_000 });
@@ -64,15 +67,23 @@ async function scrollTo(page, target) {
   }
 }
 
-// Ẩn header / nút nổi dạng fixed hoặc sticky để chúng không lặp lại ở mỗi khung ghép.
-// Bỏ qua phần tử cao (thường là section đang được ghim) để không làm mất nội dung.
+// Ẩn header / nút nổi dạng fixed hoặc sticky để chúng không lặp lại ở mỗi khung ghép:
+// phần tử nhỏ, header sticky cao nhưng đã cuộn khuất phía trên, và widget fixed như cột nút mạng xã hội.
+// Nội dung sticky nằm giữa trang (cột ảnh, section đang được ghim) được giữ lại. Ẩn bằng opacity chứ không
+// bằng visibility, vì phần tử con tự đặt `visibility: visible` (hay gặp ở menu thả xuống) vẫn sẽ hiện.
 async function hideFloating(page) {
   await page.evaluate(() => {
     for (const el of document.querySelectorAll('body *')) {
       const cs = getComputedStyle(el);
-      if ((cs.position === 'fixed' || cs.position === 'sticky') && el.getBoundingClientRect().height < 220) {
-        el.style.setProperty('visibility', 'hidden', 'important');
-      }
+      if (cs.position !== 'fixed' && cs.position !== 'sticky') continue;
+      const r = el.getBoundingClientRect();
+      const onScreen = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
+      if (onScreen <= 0) continue;
+      const partial = onScreen < window.innerHeight * 0.45;
+      const small = r.height < 220;
+      const scrolledHeader = r.top <= 0 && partial;
+      const floatingWidget = cs.position === 'fixed' && partial;
+      if (small || scrolledHeader || floatingWidget) el.style.setProperty('opacity', '0', 'important');
     }
   });
 }
