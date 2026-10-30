@@ -22,6 +22,9 @@ await page.evaluateOnNewDocument(() => {
 });
 await page.goto(URL, { waitUntil: 'networkidle0' });
 await new Promise((r) => setTimeout(r, 3500));
+// Khung 1200×630 thấp hơn hero: bỏ hàng nút để nút không bị cắt ở mép dưới ảnh.
+await page.addStyleTag({ content: '.hero-cta { display: none !important; }' });
+await new Promise((r) => setTimeout(r, 300));
 
 const buf = await page.screenshot({ type: 'png' });
 await sharp(buf).resize(1200, 630).jpeg({ quality: 86, mozjpeg: true }).toFile(OUT);

@@ -27,8 +27,7 @@ npx vercel --prod
 
 `.vercelignore` đã loại thư mục `tools/` và `.claude/`, nên chỉ trang web được đưa lên.
 
-Sau khi có tên miền, sửa thẻ `og:image` trong `index.html` thành đường dẫn đầy đủ, ví dụ
-`https://ten-mien-cua-ban.vercel.app/assets/og.jpg`. Facebook và Zalo chỉ đọc được ảnh chia sẻ khi có đường dẫn đầy đủ.
+Các thẻ chia sẻ trong `index.html` đang dùng đường dẫn đầy đủ của `https://dnd-freelance.vercel.app`, vì Facebook và Zalo không đọc được ảnh theo đường dẫn tương đối. Nếu đổi tên miền, hãy thay địa chỉ này ở `canonical`, `og:url`, `og:image` và `twitter:image`.
 
 ## Thêm hoặc đổi một dự án
 
